@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html>
 
 <head>
@@ -11,6 +11,83 @@
 <body>
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+</body>
+
+</html> -->
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex" />
+  <title>Content Manager</title>
+  <!-- <link rel="stylesheet" href="/admin/admin.css" /> -->
+  <style>
+    /* Ukryj domyślne logo Decap CMS */
+    #nc-root>div>section>span>svg {
+      display: none !important;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Netlify Identity widget -->
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  <!-- Decap CMS -->
+  <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+
+  <script>
+    // Słownik tłumaczeń
+    const translations = {
+      "Collections": "Kolekcje",
+      "Publish": "Opublikuj",
+      "Login with Netlify Identity": "Zaloguj się",
+    };
+
+    function translateText() {
+      document.querySelectorAll("*").forEach((element) => {
+        const text = element.textContent.trim();
+        if (translations[text]) {
+          element.textContent = translations[text];
+        }
+      });
+    }
+
+    // Funkcja dodająca obrazek do elementu docelowego
+    function addLogoImage() {
+      const targetElement = document.querySelector("#nc-root > div > section > span");
+      if (targetElement && !targetElement.querySelector("img")) { // Sprawdź, czy obrazek już istnieje
+        const img = document.createElement("img");
+        img.src = "https://www.ceramikabial.pl/static/CERAMIKAlogo-a43f63b32d20b4cdcf9dee849b8ff63b.png";
+        img.alt = "Logo Ceramika";
+        img.style.width = "100px"; // Możesz dostosować szerokość
+        img.style.marginRight = "10px"; // Przykładowy styl
+
+        targetElement.prepend(img); // Dodanie obrazka jako pierwsze dziecko
+      }
+    }
+
+    // MutationObserver do tłumaczenia i dodania obrazka
+    const observer = new MutationObserver((mutations) => {
+      mutations.forEach((mutation) => {
+        if (mutation.type === "childList" || mutation.type === "subtree") {
+          translateText();
+          addLogoImage(); // Dodanie obrazka, gdy element się pojawi
+        }
+      });
+    });
+
+    // Obserwowanie body dla dynamicznych zmian
+    observer.observe(document.body, { childList: true, subtree: true });
+
+    // Początkowe wywołanie funkcji
+    document.addEventListener("DOMContentLoaded", () => {
+      translateText();
+      addLogoImage();
+      netlifyIdentity.init(); // Inicjalizacja widżetu logowania Netlify
+    });
+  </script>
 </body>
 
 </html>
