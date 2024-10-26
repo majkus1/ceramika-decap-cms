@@ -3,6 +3,8 @@ import { graphql, useStaticQuery } from "gatsby"
 import Header from "../components/header"
 import Seo from "../components/seo"
 import { Link } from "gatsby"
+import img39 from '/static/images/facebookcera.png'
+import logoCeramika from '/static/images/CERAMIKAlogo.png';
 
 const Hits = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -111,7 +113,7 @@ const Hits = () => {
 
       <section className={`${isMenuOpen ? "blurred" : ""}`} id="footer">
         <div className="logo-footer">
-          <img src="/static/images/logoCeramika.webp" />
+          <img src={logoCeramika} />
         </div>
         <div className="medium-flex">
           <div className="partners">
@@ -124,7 +126,7 @@ const Hits = () => {
               href="https://www.facebook.com/profile.php?id=100054375226875&ref=embed_page"
               target="_blank"
             >
-              <img src="/static/images/fb.png" /> Facebook
+              <img src={img39} /> Facebook
             </a>
           </div>
         </div>
@@ -138,7 +140,7 @@ const Hits = () => {
             href="https://www.facebook.com/profile.php?id=100054375226875&ref=embed_page"
             target="_blank"
           >
-            <img src="/static/images/fb.png" /> Facebook
+            <img src={img39} /> Facebook
           </a>
         </div>
       </section>
