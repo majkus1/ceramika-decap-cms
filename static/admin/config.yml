@@ -1,0 +1,19 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "static/images" # Tutaj Decap CMS zapisuje obrazy w repozytorium
+public_folder: "/images"      # Publiczna ścieżka do obrazów w przeglądarce
+
+collections:
+  - name: "promotions"
+    label: "Promocje"
+    folder: "src/data/promotions"
+    create: true
+    extension: "json"
+    format: "json"
+    fields:
+      - { label: "Tytuł", name: "title", widget: "string" }
+      - { label: "Cena", name: "price", widget: "string" }
+      - { label: "Obraz", name: "image", widget: "image" }
+      - { label: "Pokazuj w popupie", name: "inPopup", widget: "boolean", default: true }
