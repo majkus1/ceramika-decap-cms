@@ -13,65 +13,68 @@
 </html> -->
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="robots" content="noindex" />
-    <title>Content Manager</title>
-    <!-- <link rel="stylesheet" href="/admin/admin.css" /> -->
-     <style>
-      body > div > div > div > div > div.header > button:nth-child(1),
-      #nc-root > div > section > span > svg {
-        display: none !important;
-      }
-     </style>
-  </head>
-  <body>
-    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-    <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
-    
-    <script>
-      const translations = {
-        "Collections": "Kolekcje",
-        "Publish": "Opublikuj",
-        "Login with Netlify Identity": "Zaloguj się",
-      };
 
-      function translateText() {
-        document.querySelectorAll("*").forEach((element) => {
-          const text = element.textContent.trim();
-          if (translations[text]) {
-            element.textContent = translations[text];
-          }
-        });
-      }
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex" />
+  <title>Content Manager</title>
+  <!-- <link rel="stylesheet" href="/admin/admin.css" /> -->
+  <style>
+    body>div>div>div>div>div.header>button:nth-child(1),
+    #nc-root>div>section>span>svg {
+      display: none !important;
+    }
+  </style>
+</head>
 
-      function addLogoImage() {
-        const targetElement = document.querySelector("#nc-root > div > section > span");
-        if (targetElement && !targetElement.querySelector("img")) {
-          const img = document.createElement("img");
-          img.src = "https://www.ceramikabial.pl/static/CERAMIKAlogo-a43f63b32d20b4cdcf9dee849b8ff63b.png";
-          img.alt = "Logo Ceramika";
-          img.style.width = "100px";
-          img.style.marginRight = "10px";
+<body>
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
 
-          targetElement.prepend(img);
+  <script>
+    const translations = {
+      "Collections": "Kolekcje",
+      "Publish": "Opublikuj",
+      "Login with Netlify Identity": "Zaloguj się",
+    };
+
+    function translateText() {
+      document.querySelectorAll("*").forEach((element) => {
+        const text = element.textContent.trim();
+        if (translations[text]) {
+          element.textContent = translations[text];
         }
-      }
-
-      const observer = new MutationObserver((mutations) => {
-        mutations.forEach((mutation) => {
-          if (mutation.type === "childList" || mutation.type === "subtree") {
-            translateText();
-            addLogoImage();
-          }
-        });
       });
+    }
 
-      observer.observe(document.body, { childList: true, subtree: true });
+    function addLogoImage() {
+      const targetElement = document.querySelector("#nc-root > div > section > span");
+      if (targetElement && !targetElement.querySelector("img")) {
+        const img = document.createElement("img");
+        img.src = "https://www.ceramikabial.pl/static/CERAMIKAlogo-a43f63b32d20b4cdcf9dee849b8ff63b.png";
+        img.alt = "Logo Ceramika";
+        img.style.width = "100px";
+        img.style.marginRight = "10px";
 
-      translateText();
-      addLogoImage();
-    </script>
-  </body>
+        targetElement.prepend(img);
+      }
+    }
+
+    const observer = new MutationObserver((mutations) => {
+      mutations.forEach((mutation) => {
+        if (mutation.type === "childList" || mutation.type === "subtree") {
+          translateText();
+          addLogoImage();
+        }
+      });
+    });
+
+    observer.observe(document.body, { childList: true, subtree: true });
+
+    translateText();
+    addLogoImage();
+  </script>
+</body>
+
 </html>
