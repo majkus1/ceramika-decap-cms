@@ -11,48 +11,6 @@
 <body>
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
-
-  <script>
-    window.addEventListener("load", function () {
-      console.log("Strona i skrypty Decap CMS oraz Netlify Identity zostały załadowane.");
-
-      // Słownik tłumaczeń
-      const translations = {
-        "Collections": "Kolekcje",
-        "Publish": "Opublikuj",
-        "Login with Netlify Identity": "Zaloguj się",
-      };
-
-      // Funkcja do tłumaczenia tekstu
-      function translateText() {
-        document.querySelectorAll("*").forEach((element) => {
-          const text = element.textContent.trim();
-          if (translations[text]) {
-            element.textContent = translations[text];
-          }
-        });
-      }
-
-      // Funkcja dodająca obrazek do elementu docelowego
-      function addLogoImage() {
-        const targetElement = document.querySelector("#nc-root > div > section > span");
-        if (targetElement && !targetElement.querySelector("img")) { // Sprawdź, czy obrazek już istnieje
-          const img = document.createElement("img");
-          img.src = "https://www.ceramikabial.pl/static/CERAMIKAlogo-a43f63b32d20b4cdcf9dee849b8ff63b.png";
-          img.alt = "Logo Ceramika";
-          img.style.width = "100px"; // Możesz dostosować szerokość
-          img.style.marginRight = "10px"; // Przykładowy styl
-
-          targetElement.prepend(img); // Dodanie obrazka jako pierwsze dziecko
-          console.log("Logo zostało dodane do elementu.");
-        }
-      }
-
-      // Początkowe wywołanie funkcji
-      translateText();
-      addLogoImage();
-    });
-  </script>
 </body>
 
 </html>
