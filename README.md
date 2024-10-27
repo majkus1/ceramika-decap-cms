@@ -1,3 +1,6 @@
+The project was completed for a company in Białystok. It was built using Gatsby.js, perfect for static sites, and I used Decap CMS with Netlify Identity authorization to make it easy for the client to manage site content, specifically to update current promotions. When launching the new site, I needed to configure the domain settings properly, switching hosting to Netlify. All configurations were done correctly, ensuring uninterrupted email service for the client, which is hosted separately.
+www.ceramikabial.pl
+
 <!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
 <p align="center">
   <a href="https://www.gatsbyjs.com">
