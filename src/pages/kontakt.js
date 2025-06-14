@@ -31,8 +31,9 @@ const Kontakt = () => {
               <p>15-517 Białystok</p>
               <br />
               <p className="head-inform">GODZINY OTWARCIA:</p>
-              <p>poniedziałek - piątek: 8:00 - 16:00</p>
-              <p>sobota: 8 - 13</p>
+              <p>Poniedziałek - Piątek: 8:00 - 16:00</p>
+              <p>Sobota: Zamknięte</p>
+              <p>Niedziela: Zamknięte</p>
             </div>
             <div className="number-contact">
               <p className="head-inform">KONTAKT:</p>
