@@ -44,22 +44,19 @@ const Kontakt = () => {
               <a href="mailto:biuro@ceramikabial.pl">
                 e-mail: biuro@ceramikabial.pl
               </a>
-              <br />
-              <p>Właściciel: Zdzisław Święczkowski</p>
-              <a href="tel:+48 509 108 829">tel. +48 509 108 829</a>
             </div>
           </div>
           <div className="inform-box-two">
             <div className="pay-inform">
               <p className="head-inform">DANE DO PŁATNOŚCI:</p>
-              <p>ALIOR BANK S.A.</p>
-              <p>PLN: 29 2490 0005 0000 4500 6835 0518</p>
-              <p>EUR: IBAN: PL 21 2490 0005 0000 4600 7714 3081</p>
+              <p>Santander Bank Polska S.A.</p>
+              <p>PLN: 91 1090 2590 0000 0001 6285 2629</p>
+              <p>EUR: PL97 1090 2590 0000 0001 6286 7653</p>
             </div>
             <div className="company-data">
               <p className="head-inform">DANE FIRMY:</p>
-              <p>NIP: PL5420305826</p>
-              <p>REGON: 050025308</p>
+              <p>NIP: PL9662207963</p>
+              <p>REGON: 542066380</p>
             </div>
           </div>
         </div>
